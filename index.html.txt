@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Test Page</title>
+</head>
+<body style="font-family:Arial; text-align:center; margin-top:100px;">
+    <h1>🎉 IT IS WORKING 🎉</h1>
+    <p>If you can see this, GitHub Pages is OK.</p>
+</body>
+</html>
