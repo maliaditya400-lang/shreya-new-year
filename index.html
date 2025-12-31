@@ -182,8 +182,15 @@ button:hover {
 
 <script>
 function nextPage(n) {
-    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
-    document.getElementById("page" + n).style.display = "flex";
+    const pages = document.querySelectorAll(".page");
+    pages.forEach(p => {
+        p.style.display = "none";
+    });
+
+    const next = document.getElementById("page" + n);
+    if (next) {
+        next.style.display = "flex";
+    }
 }
 
 /* Hearts */
@@ -193,4 +200,5 @@ function createHeart() {
     h.innerHTML = "❤️";
     h.style.left = Math.random() * 100 + "vw";
     h.style.fontSize = Math.random() * 20 + 15 + "px";
+
     document.body.appendChild(h
