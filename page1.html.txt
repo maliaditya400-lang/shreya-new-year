@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy New Year Shreya ✨</title>
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffd6e0;
+    font-family:Arial;
+}
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+}
+a{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#ff6f91;
+    color:white;
+    text-decoration:none;
+    border-radius:20px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Happy New Year ✨</h1>
+    <p>
+        Shreya,<br>
+        this is not just a wish.<br>
+        It’s something made specially for you 💖
+    </p>
+    <a href="index.html">Open Again 🎁</a>
+</div>
+
+</body>
+</html>
