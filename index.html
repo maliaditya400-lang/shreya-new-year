@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A Gift for Shreya 💖</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* Floating hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Pages */
+.page {
+    display: none;
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    z-index:5;
+}
+
+/* Card */
+.card {
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(12px);
+    padding: 45px;
+    border-radius: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 550px;
+    box-shadow: 0 0 60px rgba(0,0,0,0.3);
+    animation: pop 1.2s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 1.25rem;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+button {
+    margin-top: 30px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ff6f91, #ff9671);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(255,105,135,0.6);
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Gift */
+.gift {
+    font-size: 5rem;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+    z-index:10;
+    position:relative;
+}
+
+@keyframes bounce {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 0 : GIFT -->
+<div class="page" id="page0" style="display:flex;">
+    <div class="card">
+        <h1>For You 💝</h1>
+        <p>Tap the gift to open your surprise</p>
+        <div class="gift" onclick="nextPage(1)"
+        style="pointer-events:auto;>🎁</div>
+    </div>
+</div>
+
+<!-- PAGE 1 -->
+<div class="page" id="page1">
+    <div class="card">
+        <h1>Happy New Year ✨</h1>
+        <p>
+            Shreya,<br>
+            this is not just a wish…<br>
+            it’s something made specially for you 💕
+        </p>
+        <button onclick="nextPage(2)">Next ➜</button>
+    </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+    <div class="card">
+        <h1>Best Friend 🌸</h1>
+        <p>
+            You are not just my best friend,<br>
+            you are my comfort and my peace 😊
+        </p>
+        <button onclick="nextPage(3)">Next ➜</button>
+    </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+    <div class="card">
+        <h1>Grateful 💖</h1>
+        <p>
+            Thank you for every laugh,<br>
+            every talk, and every moment 🥹<br><br>
+            Life feels lighter with you ✨
+        </p>
+        <button onclick="nextPage(4)">Next ➜</button>
+    </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+    <div class="card">
+        <h1>Always 🌹</h1>
+        <p>
+            No matter where life takes us,<br>
+            I’ll always be there for you 💕<br><br>
+            Happy New Year, Shreya ✨
+        </p>
+        <button onclick="nextPage(5)">One Last Thing 💝</button>
+    </div>
+</div>
+
+<!-- PAGE 5 : FINAL -->
+<div class="page" id="page5">
+    <div class="card">
+        <h1>💖</h1>
+        <p>
+            You are truly special 🥹<br>
+            Never forget that.<br><br>
+            — From your best friend 💕
+        </p>
+    </div>
+</div>
+
+<script>
+function nextPage(n) {
+    document.querySelectorAll(".page").forEach(p => p.style.display = "none");
+    document.getElementById("page" + n).style.display = "flex";
+}
+
+/* Hearts */
+function createHeart() {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤️";
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = Math.random() * 20 + 15 + "px";
+    document.body.appendChild(h
